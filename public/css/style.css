@@ -1,54 +1,227 @@
-/*
-Error: Invalid CSS after "	content:''": expected ";", was "'"
-        on line 145 of style.scss
+@font-face {
+  font-family: 'GothamN';
+  src: url("../fonts/gotham-normal.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'GothamM';
+  src: url("../fonts/gotham-medium.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* ------------------------------------------------------------------------ */
+::selection {
+  background-color: transparent; }
 
-140: }
-141: .adjust{
-142: 	top:50%;
-143: }
-144: .loading:before{
-145: 	content:'''
-146: }
-147: .loading{
-148: 	position: absolute;
-149: 	width:100%;
-150: 	height:100%;
+::moz-selection {
+  background-color: transparent; }
 
-Backtrace:
-style.scss:145
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1161:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1092:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:757:in `block in try_declaration'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1137:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1137:in `rethrow'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:762:in `try_declaration'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:692:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:646:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:631:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:656:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:42:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:403:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"	content:''\": expected \";\", was \"'\"\A         on line 145 of style.scss\A \A 140: }\A 141: .adjust{\A 142: 	top:50%;\A 143: }\A 144: .loading:before{\A 145: 	content:'''\A 146: }\A 147: .loading{\A 148: 	position: absolute;\A 149: 	width:100%;\A 150: 	height:100%;"; }
+::webkit-selection {
+  background-color: transparent; }
+
+::-webkit-scrollbar-track {
+  background: rgba(21, 21, 21, 0);
+  width: 0px;
+  display: table-cell;
+  vertical-align: middle; }
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: rgba(21, 21, 21, 0); }
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1); }
+
+* {
+  box-sizing: border-box;
+  -webkit-transition: all 0.15s ease-out;
+  -webkit-backface-visibility: hidden;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none; }
+
+/* ------------------------------------------------------------------------ */
+body {
+  position: absolute;
+  font-family: 'GothamN';
+  background: #212121;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  color: white; }
+
+.dark {
+  background: rgba(49, 206, 155, 0.7); }
+
+.light {
+  background: white; }
+
+.screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: none; }
+
+.logo {
+  position: relative;
+  width: 22%;
+  margin-top: 150px; }
+
+.title {
+  position: relative;
+  font-family: 'GothamM';
+  font-size: 25px;
+  color: white;
+  margin-top: 20px;
+  padding: 0px 10px 0px 10px; }
+
+.subTitle {
+  position: relative;
+  font-family: 'GothamN';
+  font-size: 22px;
+  color: white;
+  margin: 20px 15px 0px 15px;
+  opacity: 0.7; }
+
+.underline {
+  position: relative;
+  width: 50px;
+  left: 50%;
+  height: 3px;
+  border-radius: 3px;
+  background: white;
+  margin: 20px 0px 0px -25px; }
+
+.btn {
+  position: relative;
+  margin: 20px 20px;
+  width: 220px;
+  left: 50%;
+  margin-left: -110px;
+  height: 50px;
+  text-align: center;
+  background: #31CE9B;
+  color: white;
+  line-height: 50px;
+  font-family: 'GothamM';
+  font-size: 18px;
+  border-radius: 200px; }
+
+.whiteBtn {
+  color: #31CE9B;
+  background: white; }
+
+.extra {
+  position: relative;
+  height: 20px; }
+
+.adjust {
+  top: 50%; }
+
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #31CE9B;
+  z-index: 100; }
+
+.loadingInner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 33, 33, 0.4); }
+
+.animationContainer {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  text-align: center; }
+
+.logoAnim {
+  position: relative;
+  height: 80px;
+  margin-top: 110px; }
+
+.anim {
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+  height: 200px;
+  border: 4px solid white;
+  border-radius: 300px; }
+
+.fa {
+  border-color: #31CE9B;
+  -webkit-animation-name: out;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite; }
+
+.sa {
+  border-color: white;
+  -webkit-animation-name: in;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite; }
+
+@-webkit-keyframes out {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5); }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: scale(0.75); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1); } }
+@-webkit-keyframes in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1); }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: scale(0.75); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5); } }
+.header {
+  position: absolute;
+  top: 0px;
+  height: 80px;
+  width: 100%; }
+
+.actionInner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  font-family: 'GothamM';
+  background: #31CE9B;
+  border-radius: 300px;
+  z-index: 60;
+  -webkit-transition: all 0.2s ease-out;
+  text-align: center;
+  color: white;
+  font-size: 35px;
+  line-height: 60px;
+  font-weight: 300; }
+
+.noBoxShadow {
+  box-shadow: none !important;
+  -webkit-transition: all 0.2s ease-out; }
+
+/*# sourceMappingURL=style.css.map */

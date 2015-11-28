@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "green"
+    },
+    "green": {
+      "applicationId": "b60mICc9iy2q8JjMZNaRcQ4Y7hFDJEMmxTIp4uAq"
+    }
+  }
+}

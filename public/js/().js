@@ -3,8 +3,7 @@ $(function(){
 	setTimeout(function(){
 		//adjust();
 		if(loggedIn){
-			transitDiv('loading','main');
-			
+			transitDiv('loading','localPay');
 		}else{
 			transitDiv('loading','login');	
 			localStorage.loggedIn = JSON.stringify(1);
@@ -14,26 +13,6 @@ $(function(){
 	
 	$(".loginBtn").bind('mousedown',function(){
 		transitDiv('login','main');		
-	});
-
-	$(".name").bind('mousedown',function(){
-		person = $(this).children('green').html();
-		$(".contactPay").html('sending to Mom');
-		transitDiv('contact','sendPay');
-	});
-
-	$(".payLocal").bind('mousedown',function(){
-		closeDrawer();
-		transitDiv('main','localPay');		
-	});
-
-	$(".sendMoney").bind('mousedown',function(){
-		closeDrawer();
-		transitDiv('main','contact');		
-	});
-
-	$(".successHomeBtn").bind('mousedown',function(){
-		transitDiv('otp','main');		
 	});
 
 	$(".actionDrawer").bind('mousedown',function(){
@@ -52,24 +31,12 @@ $(function(){
 	$(".backToMain").bind('mousedown',function(){
 		transitDiv('account','main');
 	});
-	$(".toMainContact").bind('mousedown',function(){
-		transitDiv('contact','main');
-	});
 
 	$(".key").bind('mousedown',function(){
-		if(!verifyOn){
-			$(this).toggleClass('keyPressed');	
-		}else{
-			$(this).toggleClass('businessKey');
-		}
-		
+		$(this).toggleClass('keyPressed');
 	}).bind('mouseup',function(){
 		$(".payUser").removeClass('inactive');
-		if(!verifyOn){
-			$(this).toggleClass('keyPressed');	
-		}else{
-			$(this).toggleClass('businessKey');
-		}
+		$(this).toggleClass('keyPressed');
 		myClass = $(this).prop('className');
 		keyUp = myClass.split(" ");
 		key = keyUp[1].split('');
@@ -82,8 +49,9 @@ $(function(){
 		}
 		if(verifyOn){
 			pinCount++;
-			$('.dot').removeClass('dotOn');
-			if(pinCount == 1){
+			console.log("Hey");
+			if(pinCount){
+				//console.log('dotOne');
 				$('.dot1').addClass('dotOn');
 			}else if(pinCount == 2){
 				$('.dot1').addClass('dotOn');
@@ -97,15 +65,10 @@ $(function(){
 				$('.dot2').addClass('dotOn');
 				$('.dot3').addClass('dotOn');
 				$('.dot4').addClass('dotOn');
-				$('.verifyBtn').removeClass('inactive');
-				verifyOn = false;
-				verifySucess = true;
 			}
+
 		}else{
-			if(!verifySucess){
-				$('.localPayValue').html(string);		
-			}
-			
+			$('.localPayValue').html(string);	
 		}
 		
 		//console.log(string);
@@ -115,14 +78,6 @@ $(function(){
 		if(!$(this).hasClass('inactive')){
 			//Enter Pin
 			$(".payUser").html('VERIFY').addClass('verifyBtn');
-			$(this).removeClass('payUser');
-			$(".verifyBtn").addClass('inactive');
-			$('.verifyBtn').bind('mouseup',function(){
-				if($(this).hasClass('inactive')){
-					console.log('test');
-					completeLocalPayment();
-				}
-			});
 			$(".blink").hide();
 			$(".localPaySub").html('store please verify.');
 			$('.localPay').addClass('localPayChange');
@@ -139,7 +94,6 @@ var string = '';
 var pin = '';
 var pinCount = 0;
 var verifyOn = false;
-var verifySucess = false;
 if(localStorage.loggedIn){
 	loggedIn = JSON.parse(localStorage.loggedIn);
 	console.log(loggedIn);
@@ -175,18 +129,4 @@ function closeDrawer(){
 	$('.actionDrawer').transition({rotate:'0deg',scale:[1,1],opacity:1});
 	$('.sendMoney').transition({rotate:'-45deg',y:'0px'});
 	$('.payLocal').transition({rotate:'-45deg',y:'0px'});
-}
-function completeLocalPayment(){
-	verifySucess = false;
-	transitDiv('localPay','otp');
-	setTimeout(function(){
-				$('.otpTextInner').html('523419 it is!');
-				$('.smallOtpText').html('we are just verifying it and you will be done in no time');
-				setTimeout(function(){
-					$('.otpTextInner').html('and its done!');
-					$('.successHomeBtn').show();
-					$('.anim').hide();
-				},2000);
-	},2500);
-
 }

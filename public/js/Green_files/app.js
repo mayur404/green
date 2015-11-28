@@ -3,7 +3,7 @@ $(function(){
 	setTimeout(function(){
 		//adjust();
 		if(loggedIn){
-			transitDiv('loading','main');
+			transitDiv('loading','sendPay');
 			
 		}else{
 			transitDiv('loading','login');	
@@ -17,9 +17,8 @@ $(function(){
 	});
 
 	$(".name").bind('mousedown',function(){
-		person = $(this).children('green').html();
-		$(".contactPay").html('sending to Mom');
-		transitDiv('contact','sendPay');
+		$(this).children('contactPay').html();
+		transitDiv('contact','main');		
 	});
 
 	$(".payLocal").bind('mousedown',function(){

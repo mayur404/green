@@ -5,7 +5,7 @@ $primaryLight:#7E57C2;
 $accentLight:#EC407A;
 $business:#FFB300;
 $hash21:#212121;
-
+$red:#F9522C;
 $little:#E62878;
 $boat:#1DE9B6;
 $studios:#7323DC;
@@ -68,7 +68,7 @@ $studios:#7323DC;
 body{
 	position: absolute;
 	font-family: 'GothamN';
-	background: $hash21;
+	background: white;
 	padding:0px;
 	margin:0px;
 	width:100%;
@@ -81,6 +81,10 @@ body{
 }
 .light{
 	background:white;
+}
+.elastic{
+	overflow-y:scroll !important;
+	 -webkit-overflow-scrolling: touch;
 }
 .screen{
 	position: absolute;
@@ -182,18 +186,20 @@ body{
 	margin-left:-100px;
 	margin-top:-100px;
 	height:200px;
-	border:4px solid white;
+	//border:4px solid white;
 	border-radius:300px;
 }
 .fa{
-	border-color:$primary;
+	
+	background:rgba($primary,0.5);
 	-webkit-animation-name:out;
 	-webkit-animation-duration: 2s;
     -webkit-animation-delay: 0;
     -webkit-animation-iteration-count: infinite;
 }
 .sa{
-	border-color:white;
+	
+	background:rgba(white,0.2);
 	-webkit-animation-name:in;
 	-webkit-animation-duration: 2s;
     -webkit-animation-delay: 0;
@@ -239,10 +245,10 @@ body{
 .actionInner{
 	position: fixed;
 	bottom:20px;
-	right:20px;
+	right:30px;
 	width:60px;
 	height:60px;
-	font-family:'GothamM';
+	font-family:'GothamN';
 	background:$primary;
 	border-radius:300px;
 	z-index:60;
@@ -251,9 +257,176 @@ body{
 	color:white;
 	font-size:35px;
 	line-height:60px;
-	font-weight:300;
 }
 .noBoxShadow{
 	box-shadow:none !important;
 	-webkit-transition: all 0.2s ease-out; 
+}
+.actionImage{
+	position: absolute;
+	width:60px;
+	height:60px;
+	left:0px;
+	padding:10px;
+}
+.sendMoney{
+	-webkit-transition:rotate(-45deg);
+}
+.payLocal{
+	-webkit-transition:rotate(-45deg);
+}
+.greeting{
+	position: relative;
+	top:10px;
+	color:rgba($hash21,0.5);
+	font-size:18px;
+	font-family:'GothamN';
+	width:100%;
+	text-align:left;
+	margin:20px 0px;
+	padding:0px 20px;
+	padding-left:50px;
+	line-height:20px;
+}
+.settingText{
+	position: relative;
+	top:10px;
+	color:rgba($hash21,0.5);
+	font-size:22px;
+	font-family:'GothamN';
+	width:100%;
+	text-align:left;
+	margin:20px 0px;
+	padding:0px 20px;
+	padding-left:50px;
+}
+.username{
+	font-size:35px;
+	font-family:'GothamN';
+	color:$hash21;
+}
+.half{
+	position: relative;
+	width:50%;
+	display:inline-block;
+	font-size:0px;
+	text-align:left;
+	margin-top:40px;
+	line-height:30px;
+}
+.spent{
+	color:$red;
+	font-size:40px;
+	font-family:'GothamN';
+	float:left;
+	padding-left:50px;
+}
+.received{
+	color:$primary;
+	font-size:40px;
+	font-family:'GothamN';
+	float:right;
+	padding-left:20px;
+}
+.smallHalf{
+	font-size:15px;
+	opacity:0.5;
+}
+.divider{
+	position: relative;
+	width:100%;
+	height:1px;
+	background:$hash21;
+	opacity:0.2;
+	margin-top:15px;
+	margin-left:50px;
+}
+.dividerTop{
+	position: relative;
+	width:100%;
+	height:1px;
+	background:$hash21;
+	opacity:0.2;
+	margin-top:150px;
+	margin-left:50px;
+}
+.spendingListItem{
+	position:relative;
+	margin-left:50px;
+	text-align:left;
+}
+.listTitle{
+	position: relative;
+	font-size:18px;
+	font-family:'GothamN';
+	color:rgba($hash21,0.5);
+	text-align:left;
+	margin-left:50px;
+	padding-top:10px;
+}
+.listAmount{
+	position:relative;
+	font-size:22px;
+	font-family:'GothamN';
+	text-align:left;
+	margin-left:50px;
+	padding-top:10px;
+}
+.red{
+	color:$red;
+}
+.green{
+	color:$primary;
+}
+.noColor{
+	//color:rgba($hash21,0.5);
+	font-size:15px;
+}
+.noColorT{
+	color:rgba($hash21,0.5);
+	font-size:15px;
+}
+.high{
+	color:$hash21;
+}
+.main{
+	display:none;
+}
+.account{
+	display:none;
+}
+.black{
+	color:$hash21;
+}
+.backToMain{
+	position: relative;
+	height:60px;
+	left:40px;
+	margin-top:50px;
+	margin-bottom:-20px;
+}
+.noCenter{
+	text-align:left !important;
+}
+.darkBack{
+	position: absolute;
+	width:100%;
+	height:100%;
+	background:rgba($hash21,0.4);
+	text-align:center;
+}
+.subTitle{
+	position: relative;
+	font-family:'GothamN';
+	font-size:22px;
+	color:white;
+	margin:40px 15px 0px 15px;
+	opacity:1;
+}
+.amountInput{
+	position:relative;
+	font-family:'GothamN';
+	font-size:50px;
+	margin:20px;
+	color:white;
 }

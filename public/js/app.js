@@ -3,19 +3,19 @@ $(function(){
 	setTimeout(function(){
 		//adjust();
 		if(loggedIn){
-			transitDiv('loading','main');
+			transitDiv('loading','localPay');
 		}else{
 			transitDiv('loading','login');	
 			localStorage.loggedIn = JSON.stringify(1);
 		}
 		
-	},1000);
+	},1500);
 	
 	$(".loginBtn").bind('mousedown',function(){
 		transitDiv('login','main');		
 	});
 
-	$(".actionInner").bind('mousedown',function(){
+	$(".actionDrawer").bind('mousedown',function(){
 		$(this).toggleClass('opened');
 		if($(this).hasClass('opened')){
 			openDrawer();	
@@ -23,6 +23,13 @@ $(function(){
 			closeDrawer();
 		}
 		
+	});
+
+	$(".username").bind('mousedown',function(){
+		transitDiv('main','account');
+	});
+	$(".backToMain").bind('mousedown',function(){
+		transitDiv('account','main');
 	});
 
 });
@@ -54,9 +61,13 @@ function transitDiv(from,to){
 }
 
 function openDrawer(){
-
+	$('.actionDrawer').transition({rotate:'45deg',scale:[0.8,0.8],opacity:0.5});
+	$('.sendMoney').transition({rotate:'0deg',y:'-=80px'});
+	$('.payLocal').transition({rotate:'0deg',y:'-=160px'});
 }
 
 function closeDrawer(){
-	
+	$('.actionDrawer').transition({rotate:'0deg',scale:[1,1],opacity:1});
+	$('.sendMoney').transition({rotate:'-45deg',y:'0px'});
+	$('.payLocal').transition({rotate:'-45deg',y:'0px'});
 }

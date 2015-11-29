@@ -52,7 +52,9 @@ body {
   margin: 0px;
   width: 100%;
   height: 100%;
-  color: white; }
+  color: white;
+  max-width: 400px;
+  max-height: 650px; }
 
 .dark {
   background: rgba(255, 179, 0, 0.7); }
@@ -68,6 +70,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  max-width: 400px;
+  max-height: 650px;
   text-align: center;
   display: none; }
 
@@ -656,5 +660,15 @@ body {
 
 .picture2 {
   display: none; }
+
+@media only screen and (min-width: 400px) and (min-height: 650px) {
+  .screen {
+    position: absolute;
+    height: 650px;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    margin-top: -325px;
+    margin-left: -200px; } }
 
 /*# sourceMappingURL=style.css.map */

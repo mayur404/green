@@ -3,14 +3,14 @@ $(function(){
 	setTimeout(function(){
 		//adjust();
 		if(loggedIn){
-			transitDiv('loading','main');
+			transitDiv('loading','login');
 			
 		}else{
 			transitDiv('loading','login');	
 			localStorage.loggedIn = JSON.stringify(1);
 		}
 		
-	},1500);
+	},2500);
 	
 	$(".loginBtn").bind('mousedown',function(){
 		transitDiv('login','main');		
@@ -34,6 +34,10 @@ $(function(){
 
 	$(".successHomeBtn").bind('mousedown',function(){
 		transitDiv('otp','main');		
+	});
+
+	$(".usuccessHomeBtn").bind('mousedown',function(){
+		transitDiv('otpOther','main');		
 	});
 
 	$(".actionDrawer").bind('mousedown',function(){
@@ -132,6 +136,9 @@ $(function(){
 		}
 	});
 
+	$(".paySentUser").bind('mouseup',function(){
+		completeDirectPayment();
+	});
 
 });
 
@@ -183,10 +190,25 @@ function completeLocalPayment(){
 				$('.otpTextInner').html('523419 it is!');
 				$('.smallOtpText').html('we are just verifying it and you will be done in no time');
 				setTimeout(function(){
-					$('.otpTextInner').html('and its done!');
+					$('.otpTextInner').html('thank you for paying with us!');
+					$('.smallOtpText').hide();
 					$('.successHomeBtn').show();
 					$('.anim').hide();
 				},2000);
 	},2500);
+}
 
+function completeDirectPayment(){
+	verifySucess = false;
+	transitDiv('sendPay','otpOther');
+	setTimeout(function(){
+				$('.otpTextInner').html('checking citrus balance!');
+				$('.smallOtpText').html('once done the payment will complete automatically');
+				setTimeout(function(){
+					$('.otpTextInner').html('thank you for paying with us!');
+					$('.smallOtpText').hide('remaining balance: Rs. 350');
+					$('.usuccessHomeBtn').show();
+					$('.anim').hide();
+				},2000);
+	},2500);
 }

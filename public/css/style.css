@@ -68,6 +68,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  max-width: 400px;
+  max-height: 650px;
   text-align: center;
   display: none; }
 
@@ -593,10 +595,26 @@ body {
 .successHomeBtn {
   display: none; }
 
+.usuccessHomeBtn {
+  display: none; }
+
 .otp {
   display: none; }
 
 .sendPay {
   display: none; }
+
+.otpOther {
+  display: none; }
+
+@media only screen and (min-width: 400px) and (min-height: 650px) {
+  .screen {
+    position: absolute;
+    height: 650px;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    margin-top: -325px;
+    margin-left: -200px; } }
 
 /*# sourceMappingURL=style.css.map */

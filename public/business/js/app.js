@@ -10,7 +10,7 @@ $(function(){
 			localStorage.loggedIn = JSON.stringify(1);
 		}
 		
-	},1500);
+	},2500);
 	
 	$(".loginBtn").bind('mousedown',function(){
 		transitDiv('login','main');		

@@ -302,8 +302,21 @@ body{
 	padding:0px 20px;
 	padding-left:50px;
 }
+.segText{
+	position: relative;
+	top:10px;
+	color:rgba($hash21,0.9);
+	font-size:22px;
+	font-family:'GothamN';
+	width:100%;
+	text-align:left;
+	margin:20px 0px;
+	padding:0px 20px;
+	padding-left:50px;
+	line-height:40px;
+}
 .username{
-	font-size:35px;
+	font-size:25px;
 	font-family:'GothamN';
 	color:$hash21;
 }
@@ -316,18 +329,30 @@ body{
 	margin-top:40px;
 	line-height:30px;
 }
+.myHalf{
+	position: relative;
+	width:100%;
+	display:inline-block;
+	font-size:40px;
+	text-align:left;
+	margin-top:40px;
+	line-height:30px;	
+	padding-left:50px;
+	left:30px;
+}
 .spent{
 	color:$red;
 	font-size:40px;
 	font-family:'GothamN';
 	float:left;
+	left:20px;
 	padding-left:50px;
 }
 .received{
 	color:$primary;
 	font-size:40px;
 	font-family:'GothamN';
-	float:right;
+	float:left;
 	padding-left:20px;
 }
 .smallHalf{
@@ -365,6 +390,7 @@ body{
 	text-align:left;
 	margin-left:50px;
 	padding-top:10px;
+
 }
 .listAmount{
 	position:relative;
@@ -408,6 +434,27 @@ body{
 	margin-bottom:-20px;
 }
 .toMainContact{
+	position: relative;
+	height:60px;
+	left:40px;
+	margin-top:50px;
+	margin-bottom:-20px;
+}
+.toMainDirty{
+	position: relative;
+	height:60px;
+	left:40px;
+	margin-top:50px;
+	margin-bottom:-20px;
+}
+.toMainPicture{
+	position: relative;
+	height:60px;
+	left:40px;
+	margin-top:50px;
+	margin-bottom:-20px;
+}
+.toMainPicture2{
 	position: relative;
 	height:60px;
 	left:40px;
@@ -641,5 +688,17 @@ body{
 	display:none;
 }
 .sendPay{
+	display:none;
+}
+.liveSeg{
+	margin-top:50px !important;
+}
+.dirty{
+	display:none;
+}
+.picture{
+	display:none;
+}
+.picture2{
 	display:none;
 }

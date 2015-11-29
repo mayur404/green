@@ -24,12 +24,12 @@ $(function(){
 
 	$(".payLocal").bind('mousedown',function(){
 		closeDrawer();
-		transitDiv('main','localPay');		
+		transitDiv('main','dirty');		
 	});
 
 	$(".sendMoney").bind('mousedown',function(){
 		closeDrawer();
-		transitDiv('main','contact');		
+		transitDiv('main','dirty');		
 	});
 
 	$(".successHomeBtn").bind('mousedown',function(){
@@ -55,7 +55,24 @@ $(function(){
 	$(".toMainContact").bind('mousedown',function(){
 		transitDiv('contact','main');
 	});
+	$(".toMainDirty").bind('mousedown',function(){
+		transitDiv('dirty','main');
+	});
+	$(".toMainPicture").bind('mousedown',function(){
+		transitDiv('picture','dirty');
+	});
+	$(".toMainPicture2").bind('mousedown',function(){
+		transitDiv('picture2','dirty');
+	});
 
+	$(".b").bind('mouseup',function(){
+			console.log('Test App');
+			transitDiv('dirty','picture');
+	});
+	$(".g").bind('mouseup',function(){
+			console.log('Test App');
+			transitDiv('dirty','picture2');
+	});
 	$(".key").bind('mousedown',function(){
 		if(!verifyOn){
 			$(this).toggleClass('keyPressed');	
@@ -107,6 +124,7 @@ $(function(){
 			}
 			
 		}
+
 		
 		//console.log(string);
 	});
@@ -168,7 +186,7 @@ function transitDiv(from,to){
 function openDrawer(){
 	$('.actionDrawer').transition({rotate:'45deg',scale:[0.8,0.8],opacity:0.5});
 	$('.sendMoney').transition({rotate:'0deg',y:'-=80px'});
-	$('.payLocal').transition({rotate:'0deg',y:'-=160px'});
+	$('.payLocal').transition({rotate:'0deg',y:'-=80px'});
 }
 
 function closeDrawer(){
